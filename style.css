@@ -1,0 +1,106 @@
+.container {
+  border: solid;
+  border-width: 2px;
+  border-color: black;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 50px auto;
+  max-width: 800px;
+  text-align: center;
+  font-family: "Fira Sans", sans-serif;
+  background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+}
+.citySearch {
+  text-align: left;
+  line-height: 30px;
+}
+.searchButton:hover {
+  background-color: #84a9ac;
+  transition: all 200ms ease-in-out;
+}
+.currentButton:hover {
+  background-color: #84a9ac;
+  transition: all 200ms ease-in-out;
+}
+.hourlyButton:hover {
+  background-color: #84a9ac;
+  transition: all 200ms ease-in-out;
+}
+.searchBar {
+  min-width: 400px;
+  max-width: 500px;
+  text-align: center;
+  margin: 10px 10px 10px 0;
+  border-radius: 10px;
+}
+.searchButton {
+  margin: 10px 10px 10px 0;
+  text-align: center;
+  border-radius: 10px;
+  min-width: 100px;
+}
+.currentButton {
+  text-align: center;
+  border-radius: 10px;
+  min-width: 100px;
+}
+.hourlyButton {
+  margin: 10px 10px 10px 10px;
+  text-align: center;
+  border-radius: 10px;
+  min-width: 100px;
+}
+.currentInfo {
+  line-height: 60px;
+  padding: 10px;
+}
+.currentCity {
+  font-size: 36px;
+}
+.currentEmoji {
+  font-size: 72px;
+}
+.currentDay {
+  font-size: 24px;
+}
+.currentTemp {
+  font-size: 68px;
+  font-weight: 400;
+}
+.unit {
+  position: relative;
+  top: -18px;
+  font-size: 40px;
+  font-weight: 500;
+  text-decoration: underline;
+}
+.unitSlash {
+  position: relative;
+  top: -18px;
+  font-size: 40px;
+  font-weight: 500;
+}
+.unit:hover {
+  cursor: pointer;
+  color: #84a9ac;
+}
+.emojiDescription {
+  font-size: 28px;
+}
+.highLowMajor {
+  font-size: 24px;
+}
+.timePeriods {
+  line-height: 50px;
+  font-size: 18px;
+  padding: 20px;
+}
+.timeOfDay {
+  background-color: #e0dede;
+}
+.emoji {
+  font-size: 60px;
+}
+.forecast {
+  margin: 10px 0 10px 0;
+}
