@@ -73,6 +73,12 @@ function displayLocationTemp(response) {
   document.querySelector("#lowMajor").innerHTML = Math.round(
     response.data.main.temp_min
   );
+  document.querySelector("#percent").innerHTML = Math.round(
+    response.data.main.humidity
+  );
+  document.querySelector("#speed").innerHTML = Math.round(
+    response.data.wind.speed
+  );
 }
 
 let showCity = document.querySelector("#city-search-form");

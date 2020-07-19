@@ -15,6 +15,8 @@
 <body>
     <div class="container">
 
+    <div class="app">
+
         <div>
             <form class="citySearch" id="city-search-form">
                 <input type="text" placeholder="City to Search" class="searchBar" id="city-to-search" autofocus="on" />
@@ -50,6 +52,12 @@
                 </div>
                 <div class="row-col-1 highLowMajor">
                     <strong><span id="highMajor">85</span>°</strong>/<span id="lowMajor">70</span>°
+                </div>
+                <div class="row-col-1 humidity wind">
+                 <ul>
+                   <li id="humidity">Humidity: <span id="percent">0</span>%</li>
+                   <li id="wind">Wind: <span id="speed">0</span> <span id="speed-unit">mph</span> </li>
+                 </ul>
                 </div>
             </div>
 
@@ -176,6 +184,8 @@
             </div>
 
         </div>
+    </div>
+
     </div>
 
     </div>
