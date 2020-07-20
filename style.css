@@ -8,7 +8,13 @@
   max-width: 800px;
   text-align: center;
   font-family: "Fira Sans", sans-serif;
-  background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+  background: #c9ccd3;
+  background-image: linear-gradient(
+    -180deg,
+    rgba(255, 255, 255, 0.5) 0%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+  background-blend-mode: lighten;
 }
 .citySearch {
   text-align: left;
@@ -86,6 +92,9 @@
 }
 .emojiDescription {
   font-size: 28px;
+}
+.emojiDescription:first-letter {
+  text-transform: capitalize;
 }
 .highLowMajor {
   font-size: 24px;
