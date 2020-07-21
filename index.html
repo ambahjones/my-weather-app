@@ -1,198 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather App</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="container">
-
-    <div class="app">
-
+      <div class="app">
         <div>
-            <form class="citySearch" id="city-search-form">
-                <input type="text" placeholder="City to Search" class="searchBar" id="city-to-search" autofocus="on" />
-                <input type="submit" value="Search" class="searchButton" id="search" />
-                <input type="submit" value="Current" class="currentButton" id="current" />
-                <input type="submit" value="Hourly" class="hourlyButton" id="hourly" />
-            </form>
+          <form class="citySearch" id="city-search-form">
+            <input
+              type="text"
+              placeholder="City to Search"
+              class="searchBar"
+              id="city-to-search"
+              autofocus="on"
+            />
+            <input
+              type="submit"
+              value="Search"
+              class="searchButton"
+              id="search"
+            />
+            <input
+              type="submit"
+              value="Current"
+              class="currentButton"
+              id="current"
+            />
+          </form>
         </div>
 
         <div class="row currentInfo">
-            <div class="col cityEmoji">
-                <div class="row-col-1 currentCity" id="current-city">
-                    Philadelphia
-                </div>
-                <div class="row-col-1 currentEmoji">
-                  <img src="" alt="" id="weather-icon">
-                </div>
+          <div class="col cityEmoji">
+            <div class="row-col-1 currentCity" id="current-city">
+              Philadelphia
             </div>
-
-            <div class="col currentDayTemp">
-                <div class="row-col-1 currentDay" id="current-day">
-                    Saturday, 1:41
-                </div>
-                <div class="row-col-1 currentTemp">
-                    <span class="temp" id="temperature">80</span>°<span class="unit" id="unit-f">F</span><span
-                        class="unitSlash">|</span><span class="unit" id="unit-c">C</span>
-                </div>
+            <div class="row-col-1 currentEmoji">
+              <img src="" alt="" id="weather-icon" />
             </div>
+          </div>
 
-            <div class="col weather">
-                <div class="row-col-1 emojiDescription" id="emoji-description">
-                    Partly Cloudy
-                </div>
-                <div class="row-col-1 highLowMajor">
-                    <strong><span id="highMajor">85</span>°</strong>/<span id="lowMajor">70</span>°
-                </div>
-                <div class="row-col-1 humidity wind">
-                 <ul>
-                   <li id="humidity">Humidity: <span id="percent">0</span>%</li>
-                   <li id="wind">Wind: <span id="speed">0</span> <span id="speed-unit">mph</span> </li>
-                 </ul>
-                </div>
+          <div class="col currentDayTemp">
+            <div class="row-col-1 currentDay" id="current-day">
+              Saturday, 1:41
             </div>
+            <div class="row-col-1 currentTemp">
+              <span class="temp" id="temperature">80</span>°<span
+                class="unit"
+                id="unit-f"
+                >F</span
+              ><span class="unitSlash">|</span
+              ><span class="unit" id="unit-c">C</span>
+            </div>
+          </div>
 
+          <div class="col weather">
+            <div class="row-col-1 emojiDescription" id="emoji-description">
+              Partly Cloudy
+            </div>
+            <div class="row-col-1 highLowMajor">
+              <strong><span id="high-major">85</span>°</strong>/<span
+                id="low-major"
+                >70</span
+              >°
+            </div>
+            <div class="row-col-1 humidity wind">
+              <ul>
+                <li id="humidity">Humidity: <span id="percent">0</span>%</li>
+                <li id="wind">
+                  Wind: <span id="speed">0</span>
+                  <span id="speed-unit">mph</span>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
 
-        <div class="row timePeriods">
-            <div class="col">
-                <div class="card timeOfDay morning">
-                    <div class="row-col-1">
-                        <strong>Morning</strong>
-                    </div>
-                    <div class="row-col-1 emoji">
-                        ☀️
-                    </div>
-                    <div class="row-col-1">
-                        75°
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card timeOfDay afternoon">
-                    <div class="row-col-1">
-                        <strong>Afternoon</strong>
-                    </div>
-                    <div class="row-col-1 emoji">
-                        ☀️
-                    </div>
-                    <div class="row-col-1">
-                        89°
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card timeOfDay evening">
-                    <div class="row-col-1">
-                        <strong>Evening</strong>
-                    </div>
-                    <div class="row-col-1 emoji">
-                        ☁️
-                    </div>
-                    <div class="row-col-1">
-                        80°
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card timeOfDay overnight">
-                    <div class="row-col-1">
-                        <strong>Overnight</strong>
-                    </div>
-                    <div class="row-col-1 emoji">
-                        ☁️
-                    </div>
-                    <div class="row-col-1">
-                        72°
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row forecast">
-
-            <div class="col dayOne">
-                <div class="row-col-1">
-                    Saturday
-                </div>
-                <div class="row-col-1 emoji">
-                    🌧
-                </div>
-                <div class="row-col-1 highLowMinor">
-                    <strong>88°</strong>/72°
-                </div>
-            </div>
-
-            <div class="col dayTwo">
-                <div class="row-col-1">
-                    Sunday
-                </div>
-                <div class="row-col-1 emoji">
-                    🌦
-                </div>
-                <div class="row-col-1 highLowMinor">
-                    <strong>89°</strong>/71°
-                </div>
-            </div>
-
-            <div class="col dayThree">
-                <div class="row-col-1">
-                    Monday
-                </div>
-                <div class="row-col-1 emoji">
-                    ☀️
-                </div>
-                <div class="row-col-1 highLowMinor">
-                    <strong>91°</strong>/70°
-                </div>
-            </div>
-
-            <div class="col dayFour">
-                <div class="row-col-1">
-                    Tuesday
-                </div>
-                <div class="row-col-1 emoji">
-                    🌦
-                </div>
-                <div class="row-col-1 highLowMinor">
-                    <strong>89°</strong>/70°
-                </div>
-            </div>
-
-            <div class="col dayFive">
-                <div class="row-col-1">
-                    Wednesday
-                </div>
-                <div class="row-col-1 emoji">
-                    🌦
-                </div>
-                <div class="row-col-1 highLowMinor">
-                    <strong>85°</strong>/69°
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    </div>
-
+        <div class="row forecast" id="forecast"></div>
+      </div>
     </div>
     <div class="codeLink">
-<a href="https://github.com/ambahjones/my-weather-app" target="_blank">Open-source code</a> by Amber Jones
+      <a href="https://github.com/ambahjones/my-weather-app" target="_blank"
+        >Open-source code</a
+      >
+      by Amber Jones
     </div>
     <script src="index.js"></script>
-</body>
-
+  </body>
 </html>
