@@ -56,7 +56,12 @@
 .currentEmoji {
   font-size: 72px;
 }
+#updated {
+  line-height: 16px;
+  font-size: 16px;
+}
 .currentDay {
+  line-height: 40px;
   font-size: 24px;
 }
 .currentTemp {
@@ -109,7 +114,7 @@ li {
   font-size: 60px;
 }
 .forecast {
-  margin: 10px 0 10px 0;
+  margin: 20px 0 20px 0;
 }
 .codeLink {
   position: relative;
