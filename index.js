@@ -94,9 +94,9 @@ function displayForecast(response) {
       }@2x.png" id="forecast-icon" />
       <div id="forecast-temps">
         <strong>
-          <span id="high-minor">${Math.round(
+          <span class="highMinor">${Math.round(
             forecast.main.temp_max
-          )}</span>°</strong>/<span id="low-minor">${Math.round(
+          )}</span>°</strong>/<span class="lowMinor">${Math.round(
       forecast.main.temp_min
     )}</span>°
       </div>
