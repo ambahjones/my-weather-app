@@ -84,8 +84,11 @@ function displayForecast(response) {
   let showForecast = document.querySelector("#forecast");
   showForecast.innerHTML = null;
   let forecast = null;
+ 
   for (let index = 0; index < 6; index++) {
     forecast = response.data.list[index];
+    forecastHigh = forecast.main.temp_max;
+    forecastLow = forecast.main.temp_min;
     showForecast.innerHTML += `
     <div class="col-2">
       <h3 id="forecast-time">${formatHours(forecast.dt * 1000)}</h3>
@@ -95,9 +98,9 @@ function displayForecast(response) {
       <div id="forecast-temps">
         <strong>
           <span class="highMinor">${Math.round(
-            forecast.main.temp_max
+            forecastHigh
           )}</span>°</strong>/<span class="lowMinor">${Math.round(
-      forecast.main.temp_min
+      forecastLow
     )}</span>°
       </div>
     </div>
@@ -150,6 +153,8 @@ function displayCelciusTemp(event) {
     speedImperial * 1.609
   );
   document.querySelector("#speed-unit").innerHTML = "kph";
+
+
 }
 
 function displayFahrenheitTemp(event) {
@@ -159,6 +164,7 @@ function displayFahrenheitTemp(event) {
   document.querySelector("#low-major").innerHTML = Math.round(lowTemp);
   document.querySelector("#speed").innerHTML = Math.round(speedImperial);
   document.querySelector("#speed-unit").innerHTML = "mph";
+
 }
 
 let fahrenheitTemp = null;
