@@ -138,6 +138,10 @@ function currentLocation(event) {
   navigator.geolocation.getCurrentPosition(getCurrent);
 }
 
+//variables for forecast conversion
+let highToConvert = document.querySelectorAll('.highMinor');
+let lowToConvert = document.querySelectorAll('.lowMinor');
+
 function displayCelciusTemp(event) {
   event.preventDefault();
   document.querySelector("#temperature").innerHTML = Math.round(
@@ -154,7 +158,10 @@ function displayCelciusTemp(event) {
   );
   document.querySelector("#speed-unit").innerHTML = "kph";
 
-
+    //testing out forecast conversion
+    //if(highToConvert) {
+      //highToConvert.innerHTML = Math.round(((forecastHigh - 32) * 5) / 9);
+    //}
 }
 
 function displayFahrenheitTemp(event) {
